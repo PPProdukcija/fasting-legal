@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Fastday — Fastday</title>
+<link rel="stylesheet" href="style.css">
+<script>
+(function(){document.documentElement.classList.add('js');
+var langs=['en','es','fr'];var q=new URLSearchParams(location.search).get('lang');
+var pref=(q||(navigator.languages||[navigator.language||'en'])[0]||'en').slice(0,2).toLowerCase();
+if(langs.indexOf(pref)<0)pref='en';
+function show(l){document.querySelectorAll('section[lang]').forEach(function(s){s.classList.toggle('on',s.lang===l)});
+document.querySelectorAll('nav.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+document.documentElement.lang=l;var h=document.querySelector('section.on h1');if(h)document.title=h.textContent+' — Fastday';}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('nav.lang button').forEach(function(b){b.onclick=function(){show(b.dataset.l)}});show(pref);});
+})();
+</script>
+</head>
+<body>
+<main>
+<header><a class="brand" href="/fasting-legal/">Fastday</a><nav class="lang" aria-label="Language"><button data-l="en">English</button><button data-l="es">Español</button><button data-l="fr">Français</button></nav></header>
+<section lang="en"><h1>Fastday</h1><p class="updated">An intermittent-fasting timer and tracker: plans, phases, a streak, water and weight.</p><div class="cards"><a href="legal/fasting/privacy/?lang=en">Privacy Policy</a><a href="legal/fasting/terms/?lang=en">Terms of Use</a><a href="legal/fasting/support/?lang=en">Support</a></div></section>
+<section lang="es"><h1>Fastday</h1><p class="updated">Un temporizador y registro de ayuno intermitente: planes, fases, racha, agua y peso.</p><div class="cards"><a href="legal/fasting/privacy/?lang=es">Política de privacidad</a><a href="legal/fasting/terms/?lang=es">Términos de uso</a><a href="legal/fasting/support/?lang=es">Soporte</a></div></section>
+<section lang="fr"><h1>Fastday</h1><p class="updated">Un minuteur et suivi de jeûne intermittent : plans, phases, série, eau et poids.</p><div class="cards"><a href="legal/fasting/privacy/?lang=fr">Politique de confidentialité</a><a href="legal/fasting/terms/?lang=fr">Conditions d’utilisation</a><a href="legal/fasting/support/?lang=fr">Assistance</a></div></section>
+<footer>Fastday · Pavle Pejic · <a href="mailto:ppejic89@gmail.com">ppejic89@gmail.com</a></footer>
+</main>
+</body>
+</html>
